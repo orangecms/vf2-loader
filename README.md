@@ -12,7 +12,7 @@ NOTE: Currently, a USB serial at `/dev/ttyUSB0` is expected.
 To load a firmware image put a file `fw.bin` in this directory, and run:
 
 ```sh
-RUST_LOG=trace cargo run
+RUST_LOG=info cargo run
 ```
 
 ## TODO

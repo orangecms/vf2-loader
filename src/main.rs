@@ -17,7 +17,7 @@ fn main() {
     let mut file = File::open(file).unwrap();
 
     let mut port = serialport::new(dev, 115_200)
-        .timeout(std::time::Duration::from_millis(500))
+        .timeout(std::time::Duration::from_secs(1))
         .open()
         .expect("Failed to open port");
 
