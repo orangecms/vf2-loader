@@ -6,7 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-xmodem = { path = "../xmodem.rs" }
 log = "0.4.17"
 env_logger = "0.9"
 serialport = "4.2.0"
+xmodem = { path = "../xmodem.rs" }
+clap = { version = "4.1.8", features = ["derive"] }
