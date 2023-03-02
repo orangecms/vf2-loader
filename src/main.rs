@@ -51,6 +51,8 @@ fn main() {
         }
         stdout().flush().ok();
     };
+    // Though xmodem already reads the initial byte, explicitly reading a first
+    // 'C' here raises the chance of success. JH7110 seems flaky.
     let buf: &mut [u8; 1] = &mut [0];
     while buf[0] != b'C' {
         port.read_exact(buf).ok();
