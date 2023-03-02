@@ -8,7 +8,7 @@ use xmodem::{Xmodem, XmodemCfg};
 #[command(author, version, about, long_about = None)]
 struct Args {
     /// Serial port
-    #[arg(short, long, default_value = "/dev/ttyUSB0")]
+    #[arg(short = 'D', long, default_value = "/dev/ttyUSB0")]
     dev: String,
 
     /// Firmware file
