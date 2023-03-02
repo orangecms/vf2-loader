@@ -6,15 +6,21 @@ Its mask ROM expects XMODEM transfer.
 ## Usage
 
 Use a local copy of https://github.com/orangecms/xmodem.rs for now.
+Checkout the `dev` branch.
 
-NOTE: Currently, a USB serial at `/dev/ttyUSB0` is expected.
+NOTE: Your firmware image must have a specific header. To add it,
+use `spl_tool` from https://github.com/starfive-tech/Tools.
 
-To load a firmware image put a file `fw.bin` in this directory, and run:
+To load a firmware image:
 
 ```sh
-RUST_LOG=info cargo run
+cargo run /path/to/image.bin
 ```
 
-## TODO
+## Debugging
 
-Overhaul, remove hardcoded file names etc..
+To raise the log level, use the `RUST_LOG` environment variable:
+
+```sh
+RUST_LOG=info cargo run /path/to/image.bin
+```
